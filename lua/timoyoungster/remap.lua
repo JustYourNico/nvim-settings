@@ -4,6 +4,7 @@ local inoremap = require("timoyoungster.keymap").inoremap
 -- normal mode
 nnoremap("<leader>cj", "<cmd>Ex<CR>")
 nnoremap("<CR>", "o<ESC>")
+nnoremap("<S-CR>", "O<ESC>")
 nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>")
 nnoremap("`", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
 
