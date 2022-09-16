@@ -3,7 +3,7 @@ vim.opt.guicursor = ""
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.undodir = "/home/timo/.nvim/undodir"
+vim.opt.undodir = "~/.nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.nu = true
