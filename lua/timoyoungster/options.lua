@@ -3,9 +3,6 @@ vim.opt.guicursor = ""
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.undodir = "~/.nvim/undodir"
-vim.opt.undofile = true
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
