@@ -30,3 +30,5 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.completeopt = "menu,menuone,noselect"
+
+vim.opt.cursorline = true
