@@ -18,6 +18,9 @@ nnoremap("<leader>7", ":lua require('harpoon.ui').nav_file(7)<CR>")
 nnoremap("<leader>8", ":lua require('harpoon.ui').nav_file(8)<CR>")
 nnoremap("<leader>9", ":lua require('harpoon.ui').nav_file(9)<CR>")
 
+nnoremap("J", "<C-d>");
+nnoremap("K", "<C-u>");
+
 -- input mode
 inoremap("jk", "<ESC>")
 
