@@ -20,7 +20,7 @@ vim.opt.scrolloff = 8
 vim.opt.wrap = false
 
 vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "90"
 
 vim.opt.errorbells = false
 
