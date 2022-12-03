@@ -36,9 +36,12 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true}) end,
     }
-
+    
+    -- Sticky Semantic Context
+    use 'nvim-treesitter/nvim-treesitter-context'
+    
     -- Auto Pairs
-    use 'jiangmiao/auto-pairs'
+    -- use 'jiangmiao/auto-pairs'
 
     -- Comment
     use 'preservim/nerdcommenter'
