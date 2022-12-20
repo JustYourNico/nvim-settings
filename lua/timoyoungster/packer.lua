@@ -1,56 +1,57 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.lua
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configuered as `opt`
--- vim.cmd[[packadd packer.nvim]]
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+return require('packer').startup(function(use)
+	-- Packer can manage itself
+	use 'wbthomason/packer.nvim'
 
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		requires = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},
+			{'williamboman/mason.nvim'},
+			{'williamboman/mason-lspconfig.nvim'},
 
-    -- CMP
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'mfussenegger/nvim-dap'
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-buffer'},
+			{'hrsh7th/cmp-path'},
+			{'saadparwaiz1/cmp_luasnip'},
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'hrsh7th/cmp-nvim-lua'},
 
-    -- LuaSnip
-    use ({'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*"})
+			-- Snippets
+			{'L3MON4D3/LuaSnip'},
+			{'rafamadriz/friendly-snippets'},
+		}
+	}
 
-    -- Colortheme
-    use 'folke/tokyonight.nvim'
-    
-    -- Lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true}
-    }
+	-- telescope your way through the filesystem
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		-- or                            , branch = '0.1.x',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 
-    -- Folds and Highlight
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function() require('nvim-treesitter.install').update({ with_sync = true}) end,
-    }
-    
-    -- Sticky Semantic Context
-    use 'nvim-treesitter/nvim-treesitter-context'
-    
-    -- Auto Pairs
-    -- use 'jiangmiao/auto-pairs'
+	-- prime colorscheme
+	use({
+		'rose-pine/neovim',
+		as = 'rose-pine',
+		config = function()
+			vim.cmd('colorscheme rose-pine')
+		end
+	})
 
-    -- Comment
-    use 'preservim/nerdcommenter'
+	-- sittin on a tree
+	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
+	use('nvim-treesitter/playground')
 
-    -- Collab plugin
-    use 'jbyuki/instant.nvim'
+	-- fishin for files
+	use('theprimeagen/harpoon')
 
-    -- Harpoon
-    use 'nvim-lua/plenary.nvim'
-    use 'ThePrimeagen/harpoon'
-
+	-- that big'ol tree
+	use('mbbill/undotree')
 end)

@@ -1,27 +1,36 @@
-local nnoremap = require("timoyoungster.keymap").nnoremap
-local inoremap = require("timoyoungster.keymap").inoremap
+vim.mapleader = " "
 
 -- normal mode
-nnoremap("<leader>cj", "<cmd>Ex<CR>")
-nnoremap("<CR>", "o<ESC>")
-nnoremap("<S-CR>", "O<ESC>")
-nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>")
-nnoremap("`", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
+vim.keymap.set("n", "<leader>cj", vim.cmd.Ex)
 
-nnoremap("<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>")
-nnoremap("<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>")
-nnoremap("<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>")
-nnoremap("<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>")
-nnoremap("<leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>")
-nnoremap("<leader>6", ":lua require('harpoon.ui').nav_file(6)<CR>")
-nnoremap("<leader>7", ":lua require('harpoon.ui').nav_file(7)<CR>")
-nnoremap("<leader>8", ":lua require('harpoon.ui').nav_file(8)<CR>")
-nnoremap("<leader>9", ":lua require('harpoon.ui').nav_file(9)<CR>")
+vim.keymap.set("n", "J", "<C-d>zz")
+vim.keymap.set("n", "K", "<C-u>zz")
 
-nnoremap("J", "<C-d>");
-nnoremap("K", "<C-u>");
+vim.keymap.set("n", "<CR>", "o<Esc>")
+vim.keymap.set("n", "<S-CR>", "O<Esc>")
 
--- input mode
-inoremap("jk", "<ESC>")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "n", "Nzzzv")
+
+-- insert mode
+vim.keymap.set("i", "jk", "<Esc>")
 
 -- visual mode
+-- vim.keymap.set("v", "q", "<Esc>") -> maybe complications with other maps
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- greatest remap ever ('theprimeagen')
+vim.keymap.set("x", "<leader>p", "\"_dP")
+
+-- yank into system clipboard
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
+
+-- delete into void
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
+
+-- make executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
