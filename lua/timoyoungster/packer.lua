@@ -54,4 +54,7 @@ return require('packer').startup(function(use)
 
 	-- that big'ol tree
 	use('mbbill/undotree')
+
+        -- autopairs
+        use('windwp/nvim-autopairs')
 end)
