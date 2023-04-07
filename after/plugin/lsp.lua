@@ -6,11 +6,10 @@ lsp.ensure_installed({
 	'eslint',
 	'pyright',
 	'rust_analyzer',
-	'sumneko_lua',
 })
 
 lsp.set_preferences({
-        set_lsp_keymaps = false,
+    set_lsp_keymaps = false,
 })
 
 lsp.on_attach(function(client, bufnr)

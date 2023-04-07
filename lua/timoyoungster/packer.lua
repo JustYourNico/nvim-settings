@@ -55,15 +55,15 @@ return require('packer').startup(function(use)
 	-- that big'ol tree
 	use('mbbill/undotree')
 
-        -- autopairs
-        use('windwp/nvim-autopairs')
+    -- autopairs
+    use('windwp/nvim-autopairs')
 
-        -- todo highlighting
-        use {
-                "folke/todo-comments.nvim",
-                requires = "nvim-lua/plenary.nvim",
-                config = function()
-                        require("todo-comments").setup { }
-                end
-        }
+    -- todo highlighting
+    use {
+            "folke/todo-comments.nvim",
+            requires = "nvim-lua/plenary.nvim",
+            config = function()
+                    require("todo-comments").setup { }
+            end
+    }
 end)
