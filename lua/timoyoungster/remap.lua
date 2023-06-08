@@ -1,7 +1,7 @@
 vim.mapleader = " "
 
 -- normal mode
-vim.keymap.set("n", "<leader>cj", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 
 vim.keymap.set("n", "J", "<C-d>zz")
 vim.keymap.set("n", "K", "<C-u>zz")
@@ -15,7 +15,7 @@ vim.keymap.set("n", "n", "Nzzzv")
 vim.keymap.set("n", "<C-j>", "J")
 
 -- insert mode
-vim.keymap.set("i", "jk", "<Esc>")
+-- vim.keymap.set("i", "jk", "<Esc>")
 
 -- visual mode
 -- vim.keymap.set("v", "q", "<Esc>") -> maybe complications with other maps
