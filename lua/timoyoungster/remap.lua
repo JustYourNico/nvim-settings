@@ -10,7 +10,7 @@ vim.keymap.set("n", "<CR>", "o<Esc>")
 vim.keymap.set("n", "<S-CR>", "O<Esc>")
 
 vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "n", "Nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<C-j>", "J")
 
