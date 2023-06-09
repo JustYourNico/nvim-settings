@@ -67,4 +67,7 @@ return require('packer').startup(function(use)
                     require("todo-comments").setup { }
             end
     }
+
+    -- collaboration
+    use('jbyuki/instant.nvim')
 end)
