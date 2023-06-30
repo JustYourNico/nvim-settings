@@ -38,10 +38,9 @@ return require('packer').startup(function(use)
 
   -- prime colorscheme
   use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
+    'joshdick/onedark.vim',
     config = function()
-      vim.cmd('colorscheme rose-pine')
+      vim.cmd('colorscheme onedark')
     end
   })
 
