@@ -9,13 +9,10 @@ vim.keymap.set("n", "K", "<C-u>zz")
 vim.keymap.set("n", "<CR>", "o<Esc>")
 vim.keymap.set("n", "<S-CR>", "O<Esc>")
 
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
 vim.keymap.set("n", "<C-j>", "J")
 
 -- insert mode
--- vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("i", "jk", "<Esc>")
 
 -- visual mode
 -- vim.keymap.set("v", "q", "<Esc>") -> maybe complications with other maps
